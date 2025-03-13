@@ -1,7 +1,8 @@
+  GNU nano 8.3                       Dex2Hex.py
 import sys
 
 def decimal_to_hex(decimal_value):
-    hex_chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+    hex_chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C>
     hexadecimal = ""
     num = decimal_value
 
@@ -19,12 +20,3 @@ if __name__ == "__main__":
         print("Error: Please provide exactly one integer argument.")
         sys.exit(1)
 
-    try:
-        decimal_value = int(sys.argv[1])
-        if decimal_value < 0:
-            print("Error: Please provide a non-negative integer.")
-            sys.exit(1)
-        decimal_to_hex(decimal_value)
-    except ValueError:
-        print("Error: Please provide a valid integer.")
-        sys.exit(1)
