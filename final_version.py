@@ -2,6 +2,9 @@ import sys
 
 def decimal_to_hex(decimal_value):
     """Convert a non-negative integer to its hexadecimal representation."""
+    if decimal_value < 0:
+        raise ValueError("Input must be a non-negative integer.")
+    
     if decimal_value == 0:
         return "0"
 
