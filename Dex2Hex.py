@@ -1,4 +1,3 @@
-  GNU nano 8.3                       Dex2Hex.py
 import sys
 
 def decimal_to_hex(decimal_value):
