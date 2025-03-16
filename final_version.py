@@ -1,7 +1,18 @@
 import sys
 
 def decimal_to_hex(decimal_value):
-    """Convert a non-negative integer to its hexadecimal representation."""
+    """
+    Convert a non-negative integer to its hexadecimal representation.
+
+    Args:
+        decimal_value (int): The non-negative integer to convert.
+
+    Returns:
+        str: The hexadecimal representation of the input.
+
+    Raises:
+        ValueError: If the input is negative or not a valid integer.
+    """
     if decimal_value < 0:
         raise ValueError("Input must be a non-negative integer.")
     
@@ -20,25 +31,23 @@ def decimal_to_hex(decimal_value):
     return hexadecimal
 
 if __name__ == "__main__":
-    # Ensure exactly one argument is provided
+    # Check if no argument is provided
     if len(sys.argv) != 2:
         print("Error: Please provide exactly one integer argument.")
         sys.exit(1)
 
+    # Try to convert the input to an integer
     try:
-        # Try to convert the argument to an integer
         decimal_value = int(sys.argv[1])
-
-        # Ensure the provided value is non-negative
-        if decimal_value < 0:
+        if decimal_value < 0:  # Check if the provided value is negative
             print("Error: Please provide a non-negative integer.")
             sys.exit(1)
-
-        # Call the conversion function and print the result
+        
+        # Call the function to convert the valid non-negative integer to hexadecimal
         hex_result = decimal_to_hex(decimal_value)
         print(f"Hexadecimal representation is: {hex_result}")
 
-    except ValueError:
+    except ValueError as e:
         # Handle case where the input is not a valid integer
         print("Error: Please provide a valid integer.")
-        sys.exit(1)
+        raise e  # Re-raise the exception
